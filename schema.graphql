@@ -1,0 +1,38 @@
+type User{
+    id: ID!
+    name: String!
+    email: String!
+    contact: String!
+    createAt: Time!
+}
+type Application{
+    id: ID!
+    description: String!
+    appliedBy: ID!
+    appliedAt: Time!
+    verifiedBy: ID!
+    verifiedAt: Time!
+}
+input CreateUser{
+    name: String!
+    email: String!
+    contact: String!
+}
+input CreateApplication{
+    description: String!
+    appliedBy: ID!
+    verifiedBy: ID!
+}
+type Mutation{
+    newUser(input: CreateUser!): User!
+    newAppliation(input: CreateApplication!): Application!
+}
+type Query{
+    users: User!
+    userById(userId: ID!): User!
+    userByIds(userIds: [ID!]!): [User!]!
+    applications: Application!
+    applicationByUserId(userId: ID!): Application!
+    applicationByUserIds(userIds: [ID!]!): Application!
+}
+scalar Time

@@ -1,0 +1,23 @@
+# .gqlgen.yml example
+#
+# Refer to https://gqlgen.com/config/
+# for detailed .gqlgen.yml documentation.
+
+schema: schema.graphql
+exec:
+  filename: graph/generated.go
+resolver:
+  filename: api/handler/resolver.go
+  type: Resolver
+models: 
+  ID:
+    model: github.com/aneri/graphql-dataloaden/model.ID
+  User: 
+    model: github.com/aneri/graphql-dataloaden/model.User
+  Application:
+    model: github.com/aneri/graphql-dataloaden/model.Application
+  CreateApplication:
+    model: github.com/aneri/graphql-dataloaden/model.CreateApplication
+  CreateUser:
+    model: github.com/aneri/graphql-dataloaden/model.CreateUser
+
